@@ -1,12 +1,14 @@
-export const Main=()=> {
+import shopImage from '../../images/AboutTeaShop.jpg'
+import styles from './About.module.css'
+export const About=()=> {
 
     return (
-        <main className="content">
-            <section className="about">
-                <div className="about__heading">
-                    <h1 className="about__title">О компании</h1>
+        <main className={styles.content}>
+            <section className={styles.about}>
+                <div className={styles.heading}>
+                    <h1 className={styles.title}>О компании</h1>
                 </div>
-                <p className="about__text">
+                <p className={styles.text}>
                     «Чай» — сеть галерей чая, кофе, сладостей и эксклюзивных подарков с многолетней историей, основанная в 2000
                     г. Первая галерея была открыта в Москве в апреле 2001 г. в ТЦ и называлась «Чай» — название известного
                     музыкального произведения, написанного Иоганном Себастьяном Бахом.
@@ -21,21 +23,14 @@ export const Main=()=> {
                     «Чай» насчитывает более 280 галерей по всей России, включая интернет-магазин. А осенью 2012 г. была запущена
                     фабрика по производству шоколада ручной работы.
                 </p>
-                <img className="about__img"
-                     src="images/AboutTeaShop.jpg"
+                <img className={styles.img}
+                     src={shopImage}
                      alt="фотография магазина чая"
                 />
             </section>
 
 
         </main>
-)
+    )
 
 }
-
-
-
-
-
-
-

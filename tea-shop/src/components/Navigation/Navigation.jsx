@@ -1,5 +1,3 @@
-import { BurgerIcon, ListIcon } from '@ya.praktikum/react-developer-burger-ui-components';
-
 import NavigationLink from '../NavigationLink/NavigationLink';
 
 import styles from './Navigation.module.css';
@@ -7,8 +5,10 @@ import styles from './Navigation.module.css';
 function Navigation() {
     return (
         <nav className={styles.navigation}>
-            <NavigationLink icon={BurgerIcon} text="Конструктор" path="/" />
-            <NavigationLink icon={ListIcon} text="Лента заказов" path="/feed" />
+            <NavigationLink text="О компании" path="/about" />
+            <NavigationLink text="Каталог" path="/catalog" />
+            <NavigationLink text="Контакты" path="/contacts" />
+            <NavigationLink text="Корзина" path="/cart" />
         </nav>
     );
 }

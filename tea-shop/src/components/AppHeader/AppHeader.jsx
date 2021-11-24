@@ -1,15 +1,17 @@
 import { Link } from 'react-router-dom';
-//import Navigation from '../Navigation/Navigation';
 import styles from './AppHeader.module.css';
+import logo from '../../images/logo.png';
+import Navigation from "../Navigation/Navigation";
+
 
 function AppHeader() {
     return (
         <header className={styles.header}>
             <div className={styles.headerContainer}>
-                {/*<Navigation />*/}
                 <Link to="/">
-                    <img src='../../images/logo.svg' alt='logo'/>
+                    <img src={logo} alt='logo' className={styles.image}/>
                 </Link>
+                <Navigation />
             </div>
         </header>
     );
