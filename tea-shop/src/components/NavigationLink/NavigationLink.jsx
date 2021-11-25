@@ -7,7 +7,6 @@ const NavigationLink=({  text, path })=> {
         <span className={styles.link}>
       <NavLink
           className={styles.linkText}
-
           to={path}
           exact="true"
       >

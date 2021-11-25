@@ -2,9 +2,9 @@ import React from 'react';
 import Home from "../components/Home/Home";
 
 
-const HomePage = ({tea}) => {
+const HomePage = ({tea, onCardClick}) => {
     return (
-        <Home tea={tea}/>
+        <Home tea={tea} onCardClick={onCardClick}/>
     );
 };
 

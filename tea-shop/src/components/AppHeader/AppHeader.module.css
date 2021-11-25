@@ -6,16 +6,12 @@
 }
 
 .headerContainer {
-    max-width: 1920px;
+    width: 1372px;
     height: 88px;
-    width: 100%;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 8px;
-    justify-items: center;
-    align-items: center;
+    display: flex;
 }
 .image{
     height: 80px;
     width: 80px;
+    margin-right: 200px;
 }

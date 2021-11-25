@@ -1,0 +1,10 @@
+.contacts{
+    display: flex;
+    max-width: 1372px;
+    justify-content: space-around;
+    margin: 100px auto auto;
+
+}
+.wrapper{
+
+}

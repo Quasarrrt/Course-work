@@ -3,8 +3,10 @@ import SimpleImageSlider from "react-simple-image-slider";
 import {getCards, getSliderImages} from "../../services/api/api";
 import styles from './Home.module.css'
 import Card from "../Card/Card";
+import NavigationLink from "../NavigationLink/NavigationLink";
+import {Link} from "react-router-dom";
 
-const Home = ({tea}) => {
+const Home = ({tea, onCardClick}) => {
 
     const [images, setImages]=useState([]);
 
@@ -26,6 +28,7 @@ const Home = ({tea}) => {
 
     },[]);
 
+
     //console.log("Чай", tea);
     return (
             (images.length >= 1 && tea.length>=1 )&&(
@@ -41,23 +44,27 @@ const Home = ({tea}) => {
                             autoPlayDelay={2}
                         />
                     </div>
-                    <main>
-                        <h1>Каталог</h1>
-
-
-                        <section>
+                    <main className={styles.content}>
+                        <h1 className={styles.header}>Наши новинки</h1>
+                        <section className={styles.cardContainer}>
                             {
-
                                 tea.map((item, index)=>{
-                                    if(index<8){
-                                        return <Card key={item.id} card={item}/>
+                                    if(index<6) {
+                                        return <Card key={item.id} card={item} onCardClick={onCardClick}/>
                                     }
                                     return null;
                                     }
                                 )
                             }
                         </section>
+                        <Link className={styles.button}
+                              to='/catalog'
+                              exact="true">
+                            Перейти в каталог
+                        </Link>
 
+
+                        
                     </main>
                 </>
 
