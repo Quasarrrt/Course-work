@@ -5,9 +5,12 @@ const Contacts = () => {
 
     return (
             <main className={styles.contacts}>
-                    <iframe
-                        src="https://yandex.ru/map-widget/v1/?um=constructor%3A72d79e611fdff04d667cfa1016a5cf9f224ee45362007d8440d78b241587b632&amp;source=constructor"
-                        width="500" height="400" frameBorder="0"/>
+
+                    <iframe title={"map"}
+                            src="https://yandex.ru/map-widget/v1/?um=constructor%3A72d79e611fdff04d667cfa1016a5cf9f224ee45362007d8440d78b241587b632&amp;source=constructor"
+                            frameBorder="0" className={styles.map}/>
+
+
                 <div className={styles.wrapper}>
                     <h1>КОНТАКТЫ</h1>
                     <h2 className="">Почта</h2>

@@ -1,7 +1,6 @@
 .about{
     display: flex;
     flex-direction: column;
-    height: 100%;
     align-items: center;
     margin: auto;
     max-width: 1280px;
@@ -9,7 +8,7 @@
 }
 .heading{
     background-image: url("../../images/aboutTitle.jpg");
-    width:1440px;
+   width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -19,7 +18,7 @@
 }
 .img{
     height: 486px;
-    margin: 40px auto 40px auto;
+    margin:auto ;
 
 }
 .text{
@@ -34,11 +33,15 @@
     color: #FFFFFF;
 
 }
-.content{
-    width: 1440px;
-    background: #FFFFFF;
-    display: flex;
-    margin: auto;
-    height: 100vh;
-
+@media screen and (max-width:742px){
+    .img{
+        width: 400px;
+        height: 400px;
+    }
+}
+@media screen and (max-width:420px){
+    .img{
+        width: 200px;
+        height: 200px;
+    }
 }

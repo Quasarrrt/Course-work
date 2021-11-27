@@ -3,7 +3,7 @@ import styles from './About.module.css'
 export const About=()=> {
 
     return (
-        <main className={styles.content}>
+
             <section className={styles.about}>
                 <div className={styles.heading}>
                     <h1 className={styles.title}>О компании</h1>
@@ -29,8 +29,6 @@ export const About=()=> {
                 />
             </section>
 
-
-        </main>
     )
 
 }

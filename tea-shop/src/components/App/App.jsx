@@ -1,4 +1,3 @@
-import styles from './App.module.css';
 import AppHeader from "../AppHeader/AppHeader";
 import { Routes ,Route } from 'react-router-dom';
 import HomePage from "../../pages/home";
@@ -45,6 +44,7 @@ function App() {
                     price: item.height,
                     url: item.urls.regular,
                     id: item.id,
+                    quantity: 1,
                 }
             })
 
@@ -58,7 +58,15 @@ function App() {
 
     //console.log("Чай", tea);
     const onCardClick=(item)=>{
-        setCart([...cart, item])
+        const find=cart.find((card)=> card.id===item.id);
+        if(!find){
+            setCart([...cart, item])
+        }
+        else{
+            const newArray=cart.map((card)=>card.id===item.id? {...card, quantity: card.quantity+1}:card)
+            setCart([...newArray])
+        }
+
 }
 const onCardDelete=(id)=>{
         const array=cart.filter(item=> item.id!==id);

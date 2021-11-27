@@ -1,12 +1,26 @@
-import React from 'react';
+import React, {useState} from 'react';
 import styles from './Cart.module.css'
 import CartItem from "../CartItem/CartItem";
 
 const Cart = ({cart,  onCardDelete}) => {
+    const[quantity, setQuantity]=useState(cart);
+
+    const changeQuantity=(tea, action)=>{
+        if(action==="increase"){
+            const newArray=quantity.map(item=> item.id===tea.id? {...item, quantity: item.quantity+1}: item)
+            setQuantity([...newArray]);
+        }
+        else if(action==="decrease"){
+            const newArray=quantity.map(item=> item.id===tea.id? {...item, quantity: item.quantity-1}: item)
+            setQuantity([...newArray]);
+        }
+
+
+    }
     const getPrice=()=>{
         let sum=0;
-        cart.forEach((item)=>{
-            sum+=item.price;
+        quantity.forEach((item)=>{
+            sum+=item.price*item.quantity;
         })
         return sum;
     }
@@ -19,12 +33,12 @@ const Cart = ({cart,  onCardDelete}) => {
                 <p>Цена</p>
             </div>
             <hr className={styles.line}/>
-            {cart.map((item)=>{
+            {quantity.map((item)=>{
                 return(
-                    <>
-                        <CartItem cart={item} onCardDelete={onCardDelete}/>
-                        <hr className={styles.line}/>
-                    </>
+
+                        <CartItem cart={item} onCardDelete={onCardDelete} changeQuantity={changeQuantity}  key={item.id} />
+
+
                     )
 
 
@@ -32,7 +46,6 @@ const Cart = ({cart,  onCardDelete}) => {
 
             )}
 
-            <hr className={styles.line}/>
             <p className={styles.price}>Итоговая цена: {getPrice()} ₽
             </p>
         </main>

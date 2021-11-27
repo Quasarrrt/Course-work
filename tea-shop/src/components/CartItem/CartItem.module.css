@@ -60,3 +60,24 @@
     width: 45px;
     height: 45px;
 }
+.line {
+    max-width: 1372px;
+    width: 99%;
+    color: #8E92A4;
+    size: 5px ;
+    margin: 0;
+}
+
+@media screen and (max-width:624px){
+    .countContainer{
+
+        margin-left: auto;
+    }
+
+}
+@media screen and (max-width:550px){
+    .image{
+        display: none;
+    }
+
+}

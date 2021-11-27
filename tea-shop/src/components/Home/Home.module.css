@@ -34,5 +34,19 @@
     border-radius: 4px;
     cursor: pointer;
     color: #2A324B;
+    margin-bottom: 40px;
+}
+@media screen and (max-width: 963px) {
+    .cardContainer{
 
+        grid-template-columns: repeat(2, 1fr);
+
+    }
+}
+@media screen and (max-width:767px){
+    .cardContainer{
+
+        grid-template-columns: repeat(1, 1fr);
+
+    }
 }

@@ -1,9 +1,8 @@
 import React, {useEffect, useState} from 'react';
 import SimpleImageSlider from "react-simple-image-slider";
-import {getCards, getSliderImages} from "../../services/api/api";
+import { getSliderImages} from "../../services/api/api";
 import styles from './Home.module.css'
 import Card from "../Card/Card";
-import NavigationLink from "../NavigationLink/NavigationLink";
 import {Link} from "react-router-dom";
 
 const Home = ({tea, onCardClick}) => {
