@@ -1,51 +1,44 @@
-.cardContainer{
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap:40px;
-    justify-items: center;
-    align-items: center;
+.cardContainer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+  justify-items: center;
+  align-items: center;
 }
-
-.content{
-    max-width: 1372px;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 0 auto;
+.content {
+  max-width: 1372px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
 }
 select {
-    margin-top: 30px;
-    margin-bottom: 70px;
-    padding: .25em;
-    border-bottom: 2px solid currentcolor;
-    font-weight: bold;
-    letter-spacing: .15em;
-    display: flex;
-    color: #2A324B;
-
+  margin-top: 30px;
+  margin-bottom: 70px;
+  padding: 0.25em;
+  border-bottom: 2px solid currentcolor;
+  font-weight: bold;
+  letter-spacing: 0.15em;
+  display: flex;
+  color: #2a324b;
 }
-select :focus, :active {
-              outline: 0;
-          }
+select :focus,
+:active {
+  outline: 0;
+}
 @media screen and (max-width: 1269px) {
-    .cardContainer{
-
-        grid-template-columns: repeat(3, 1fr);
-
-    }
+  .cardContainer {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 @media screen and (max-width: 963px) {
-    .cardContainer{
-
-        grid-template-columns: repeat(2, 1fr);
-
-    }
+  .cardContainer {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
-@media screen and (max-width:767px){
-    .cardContainer{
-
-        grid-template-columns: repeat(1, 1fr);
-
-    }
+@media screen and (max-width: 767px) {
+  .cardContainer {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
