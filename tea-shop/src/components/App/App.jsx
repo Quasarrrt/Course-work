@@ -31,7 +31,6 @@ const names = [
   "Серебряные иглы Чанша",
   "Да Хун Пао",
 ];
-
 function App() {
   const [tea, setTea] = useState([]);
   const [cart, setCart] = useState([]);
@@ -68,7 +67,20 @@ function App() {
   };
   const onCardDelete = (id) => {
     const array = cart.filter((item) => item.id !== id);
-    setCart(array);
+    setCart([...array]);
+  };
+  const changeQuantity = (tea, action) => {
+    if (action === "increase") {
+      const newArray = cart.map((item) =>
+        item.id === tea.id ? { ...item, quantity: item.quantity + 1 } : item
+      );
+      setCart([...newArray]);
+    } else if (action === "decrease") {
+      const newArray = cart.map((item) =>
+        item.id === tea.id ? { ...item, quantity: item.quantity - 1 } : item
+      );
+      setCart([...newArray]);
+    }
   };
 
   const sortCards = (value) => {
@@ -80,7 +92,6 @@ function App() {
       setTea([...array]);
     }
   };
-
   return (
     <>
       <AppHeader />
@@ -105,7 +116,13 @@ function App() {
         <Route path="/contacts" element={<ContactsPage />} exact="true" />
         <Route
           path="/cart"
-          element={<CartPage cart={cart} onCardDelete={onCardDelete} />}
+          element={
+            <CartPage
+              cart={cart}
+              onCardDelete={onCardDelete}
+              changeQuantity={changeQuantity}
+            />
+          }
           exact="true"
         />
       </Routes>

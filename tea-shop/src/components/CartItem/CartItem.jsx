@@ -5,7 +5,6 @@ const CartItem = ({ cart, onCardDelete, changeQuantity }) => {
   const handleClick = () => {
     onCardDelete(cart.id);
   };
-
   return (
     <>
       <div className={styles.container}>
